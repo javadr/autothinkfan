@@ -27,20 +27,17 @@ $ echo "#/etc/systemd/system/autothinkfan.service
 Description=Thinkfan Auto Config
 Wants=lm_sensors.service
 After=lm_sensors.service
+After=thinkpad_acpi.service
 Wants=thinkfan.service
 Before=thinkfan.service
 
 [Service]
 Type=oneshot
-WorkingDirectory=/usr/bin
-ExecStart=autothinkfan
+ExecStart=/usr/bin/bash /usr/bin/autothinkfan
 
 [Install]
 WantedBy=multi-user.target" | sudo tee /etc/systemd/system/autothinkfan.service
 
 $ sudo chmod 644 /etc/systemd/system/autothinkfan.service
-$ sudo systemctl enable autothinkfan.service --now
+$ sudo systemctl enable autothinkfan.service --nowre
 ```
-
- 
-
