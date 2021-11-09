@@ -39,5 +39,5 @@ ExecStart=/usr/bin/bash /usr/bin/autothinkfan
 WantedBy=multi-user.target" | sudo tee /etc/systemd/system/autothinkfan.service
 
 $ sudo chmod 644 /etc/systemd/system/autothinkfan.service
-$ sudo systemctl enable autothinkfan.service --nowre
+$ sudo systemctl enable autothinkfan.service --now
 ```
